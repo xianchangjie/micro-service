@@ -1,0 +1,12 @@
+##加密配置
+#jasypt:
+#  encryptor:
+#    #加密密钥
+#    password: xianchangjie
+#    #加密算法,默认PBEWithMD5AndDES
+#    #algorithm: PBEWithMD5AndDES
+
+
+
+
+

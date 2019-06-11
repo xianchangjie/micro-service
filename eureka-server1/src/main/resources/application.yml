@@ -1,0 +1,23 @@
+server:
+  #eureka服务端端口
+  port: 9000
+
+eureka:
+  server:
+    #是否开启自我保护
+    enable-self-preservation: true
+    #启动失效检测，检测间隔6s（默认）-根据客户端 eureka.instance.lease-expiration-duration-in-seconds值进行清理
+    eviction-interval-timer-in-ms: 6000
+  client:
+    #本服务是eureka服务端，不用将自己注册到eureka
+    register-with-eureka: true
+    #是否从eureka-server获取注册信息
+    fetch-registry: true
+    #暴露给eureka client的注册地址
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+spring:
+  application:
+    #注册到eureka-server的服务名称
+    name: eureka-server-1
+

@@ -1,0 +1,23 @@
+
+
+server:
+  #eureka服务端端口
+  port: 9001
+eureka:
+  client:
+    #本服务是eureka服务端，不用将自己注册到eureka
+    register-with-eureka: true
+    #是否从eureka-server获取注册信息
+    fetch-registry: true
+    #暴露给eureka client的注册地址
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+spring:
+  application:
+    #注册到eureka-server的服务名称
+    name: eureka-server-2
+  security:
+    #eureka-server访问安全配置
+    user:
+      name: root
+      password: root

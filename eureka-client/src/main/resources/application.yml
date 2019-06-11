@@ -1,0 +1,29 @@
+server:
+  #本服务端口
+  port: 9002
+spring:
+  application:
+    #注册到eureka-server的服务名称
+    name: ms-eureka-client-9002
+eureka:
+  client:
+    #eureka-server地址
+    service-url:
+      defaultZone: http://localhost:9000/eureka/,http://localhost:9001/eureka/
+    fetch-registry: true
+    #表示eureka client间隔多久去注册中心拉取服务注册信息（缓存到本地）,默认30s,前提fetch-registry: true
+    registry-fetch-interval-seconds: 30
+
+  instance:
+    #点击具体微服务，右下角显示ip
+    prefer-ip-address: true
+    #显示的服务名称
+    instance-id: ms-eureka-client-9002
+    #续约配置，服务提供者会维持一个心跳告诉eureka server 本服务还活着，这是一个心跳周期，默认30s
+    lease-renewal-interval-in-seconds: 30
+    #eureka-server从最后一次获取本服务的心跳，默认超过90s还未接收到下一次心跳，则将本服务剔除，
+    #该值太大-可能流量已经转发，但本服务已经挂掉，太小-可能只是网络波动而被注册中心剔除
+    lease-expiration-duration-in-seconds: 90
+
+
+

@@ -1,0 +1,32 @@
+server:
+  #服务端口
+  port: 7001
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  application:
+    #微服务名称
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          #git仓库url
+          uri: https://github.com/xianchangjie/config-server
+          #配置仓库路径下的相对搜索位置， 可以配置多个。
+          search-paths: /*
+          #账号
+          username: xianchangjie
+          #密码
+          password: jd407407JAY
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

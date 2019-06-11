@@ -1,0 +1,38 @@
+#加密配置
+jasypt:
+  encryptor:
+    #加密密钥
+    password: xianchangjie
+    #加密算法,默认PBEWithMD5AndDES
+    #algorithm: PBEWithMD5AndDES
+spring:
+  application:
+    #对应配置文件规则中的{application}
+    name: cs
+  cloud:
+    config:
+      #配置中心地址
+      uri: http://localhost:7001
+      #对应配置文件规则中的{profile}
+      profile: dev
+      #分支
+      label: master
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+gitprofile: ${profile}
+
+
+
+
